@@ -5,6 +5,7 @@
 }
 
 .scoreboard p {
+  font-family: monospace;
   border: 2px gray solid;
   padding-left: 1ch;
   padding-right: 1ch;

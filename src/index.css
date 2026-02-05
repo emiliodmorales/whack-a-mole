@@ -18,5 +18,11 @@
 }
 
 button {
+  background-color: white;
   border: 2px gray solid;
+  font-family: monospace;
+}
+
+button:hover {
+  background-color: rgb(209, 209, 209);
 }
