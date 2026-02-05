@@ -1,9 +1,32 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
-  const value = {};
+  const [score, setScore] = useState(0);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [moleLocation, setMoleLocation] = useState(randomHole());
+
+  const increaseScore = function () {
+    setScore(score + 1);
+  };
+
+  const randomizeMole = function () {
+    let newLocation = moleLocation;
+    while (newLocation === moleLocation) {
+      newLocation = randomHole();
+    }
+    setMoleLocation(newLocation);
+  };
+
+  const value = {
+    gameStarted,
+    setGameStarted,
+    score,
+    increaseScore,
+    moleLocation,
+    randomizeMole,
+  };
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }
 
@@ -14,4 +37,8 @@ export function useGame() {
   }
 
   return value;
+}
+
+function randomHole() {
+  return Math.floor(Math.random() * 9 + 1);
 }
