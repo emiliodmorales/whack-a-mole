@@ -1,3 +1,9 @@
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
 .holes {
   display: grid;
   grid-template-columns: repeat(3, 225px);
