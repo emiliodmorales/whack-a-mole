@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 
 .hole {
   background: url("/hole.png") no-repeat center/contain;
@@ -7,3 +10,9 @@
   background-image: url("/mole.png");
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
