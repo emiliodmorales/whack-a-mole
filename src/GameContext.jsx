@@ -3,11 +3,15 @@ import { createContext, useContext, useState } from "react";
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
+  const [highScores, setHighScores] = useState([]);
+
   const [gameStarted, setGameStarted] = useState(false);
   const startGame = function () {
     setGameStarted(true);
   };
   const endGame = function () {
+    setHighScores([...highScores, score]);
+    setScore(0);
     setGameStarted(false);
   };
 
@@ -29,6 +33,7 @@ export function GameProvider({ children }) {
     score,
     moleLocation,
     whackMole,
+    highScores,
   };
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }
