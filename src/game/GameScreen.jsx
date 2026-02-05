@@ -1,22 +1,13 @@
-import { useEffect, useRef, useState } from "react";
 import { useGame } from "../GameContext";
 import "./game.css";
 
 export default function GameScreen() {
-  const { endGame, moleLocation, whackMole, score } = useGame();
-  // Timer
-  const [time, setTime] = useState(useRef(15));
-  setInterval(() => {
-    setTime({ current: time.current - 1 });
-  }, 1000);
-  useEffect(() => {
-    if (time.current <= 0) endGame();
-  });
+  const { endGame, moleLocation, whackMole, score, time } = useGame();
 
   return (
     <>
       <p>Score: {score}</p>
-      <p>Time: {time.current}</p>
+      <p>Time: {time}</p>
       <button onClick={endGame}>Restart</button>
       <section className="holes">
         {Array.from({ length: 9 })
