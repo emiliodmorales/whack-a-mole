@@ -12,12 +12,9 @@ export function GameProvider({ children }) {
   };
 
   const [score, setScore] = useState(0);
-  const increaseScore = function () {
-    setScore(score + 1);
-  };
-
   const [moleLocation, setMoleLocation] = useState(randomHole());
-  const randomizeMole = function () {
+  const whackMole = function () {
+    setScore(score + 1);
     let newLocation = moleLocation;
     while (newLocation === moleLocation) {
       newLocation = randomHole();
@@ -30,9 +27,8 @@ export function GameProvider({ children }) {
     startGame,
     endGame,
     score,
-    increaseScore,
     moleLocation,
-    randomizeMole,
+    whackMole,
   };
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 }
