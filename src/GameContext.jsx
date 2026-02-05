@@ -7,6 +7,7 @@ export function GameProvider({ children }) {
 
   const [gameStarted, setGameStarted] = useState(false);
   const startGame = function () {
+    setMoleLocation(randomHole());
     setGameStarted(true);
   };
   const endGame = function () {
