@@ -1,0 +1,9 @@
+.high-scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.high-scores p {
+  margin: 0;
+}
