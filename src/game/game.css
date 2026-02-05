@@ -15,11 +15,28 @@
   list-style-type: none;
 
   display: grid;
-  grid-template-columns: repeat(3, 225px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 7rem;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.hole {
+  background: url("/hole.png") no-repeat center/contain;
+}
+
+.mole {
+  background: url("/mole.png") no-repeat center/contain;
+}
+
+.mole:hover {
+  cursor: pointer;
 }
 
 .hole,
 .mole {
-  width: 225px;
-  height: 250px;
+  width: 10rem;
+  height: 10rem;
 }

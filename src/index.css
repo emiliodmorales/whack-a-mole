@@ -2,14 +2,6 @@
   margin: 0;
 }
 
-.hole {
-  background: url("/hole.png") no-repeat center/contain;
-}
-
-.mole {
-  background-image: url("/mole.png");
-}
-
 #root {
   display: flex;
   flex-direction: column;
