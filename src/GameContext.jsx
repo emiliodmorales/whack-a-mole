@@ -3,14 +3,20 @@ import { createContext, useContext, useState } from "react";
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
-  const [score, setScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  const [moleLocation, setMoleLocation] = useState(randomHole());
+  const startGame = function () {
+    setGameStarted(true);
+  };
+  const endGame = function () {
+    setGameStarted(false);
+  };
 
+  const [score, setScore] = useState(0);
   const increaseScore = function () {
     setScore(score + 1);
   };
 
+  const [moleLocation, setMoleLocation] = useState(randomHole());
   const randomizeMole = function () {
     let newLocation = moleLocation;
     while (newLocation === moleLocation) {
@@ -21,7 +27,8 @@ export function GameProvider({ children }) {
 
   const value = {
     gameStarted,
-    setGameStarted,
+    startGame,
+    endGame,
     score,
     increaseScore,
     moleLocation,
