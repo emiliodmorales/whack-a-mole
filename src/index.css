@@ -16,3 +16,7 @@
   align-items: center;
   gap: 1rem;
 }
+
+button {
+  border: 2px gray solid;
+}

@@ -1,7 +1,13 @@
 .scoreboard {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.scoreboard p {
+  border: 2px gray solid;
+  padding-left: 1ch;
+  padding-right: 1ch;
 }
 
 .holes {
