@@ -1,0 +1,10 @@
+.holes {
+  display: grid;
+  grid-template-columns: repeat(3, 225px);
+}
+
+.hole,
+.mole {
+  width: 225px;
+  height: 250px;
+}
