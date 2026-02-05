@@ -5,13 +5,15 @@ export default function HighScores() {
   return (
     <section className="high-scores">
       <h2>High Scores</h2>
-      {highScores.length > 0 ? (
-        highScores
-          .sort((a, b) => b - a)
-          .map((score, i) => <p key={i}>{score}</p>)
-      ) : (
-        <p>None yet... Play the game!</p>
-      )}
+      <ol>
+        {highScores.length > 0 ? (
+          highScores
+            .sort((a, b) => b - a)
+            .map((score, i) => <li key={i}>{score}</li>)
+        ) : (
+          <p>None yet... Play the game!</p>
+        )}
+      </ol>
     </section>
   );
 }
