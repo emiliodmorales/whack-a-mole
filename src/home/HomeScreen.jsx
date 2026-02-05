@@ -7,6 +7,7 @@ export default function HomeScreen() {
     <>
       <button onClick={startGame}>Play</button>
       <section className="high-scores">
+        <h2>High Scores</h2>
         {highScores
           .sort((a, b) => b - a)
           .map((score, i) => (
