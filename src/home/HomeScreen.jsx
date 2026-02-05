@@ -11,11 +11,13 @@ export default function HomeScreen() {
       <button onClick={startGame}>Play</button>
       <section className="high-scores">
         <h2>High Scores</h2>
-        {highScores
-          .sort((a, b) => b - a)
-          .map((score, i) => (
-            <p key={i}>{score}</p>
-          ))}
+        {highScores.length > 0 ? (
+          highScores
+            .sort((a, b) => b - a)
+            .map((score, i) => <p key={i}>{score}</p>)
+        ) : (
+          <p>None yet... Play the game!</p>
+        )}
       </section>
     </>
   );
